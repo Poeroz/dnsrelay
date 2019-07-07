@@ -1,7 +1,13 @@
 #include "parser.h"
 
 int main() {
+    uint8_t *name_buf = (unsigned char *)"3scs4bupt3edu2cn0";
+    std::cout << name_buf << std::endl;
+    std::string str = "";
     message msg;
+    msg.unpackName(name_buf, str);
+//    std::cout << str << std::endl;
+
     msg.header.ID = 2333;
     msg.header.QR = 1;
     msg.header.OPCODE = 4;
@@ -16,14 +22,14 @@ int main() {
     msg.header.RRCOUNT[message::ADDTIONAL] = 4;
     for (int i = 0; i < msg.header.QDCOUNT; i++) {
         message::QUESTION tmp;
-        tmp.QNAME = "question";
+        tmp.QNAME = "3scs4bupt3edu2cn0";
         tmp.QTYPE = tmp.QCLASS = 1;
         msg.question.push_back(tmp);
     }
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < msg.header.RRCOUNT[i]; j++) {
             message::RESOURCE_RECORD tmp;
-            tmp.NAME = "RR";
+            tmp.NAME = "3www5baidu3com0";
             tmp.TYPE = tmp.CLASS = 1;
             tmp.TTL = 20;
             tmp.RDLENGTH = 1;

@@ -37,6 +37,7 @@ void message::buffer2Header(uint8_t *&ptr) {
     header.TC = (bool)((tmp & 0x0200) >> 9);
     header.RD = (bool)((tmp & 0x0100) >> 8);
     header.RA = (bool)((tmp & 0x0080) >> 7);
+
     header.ZERO = (uint8_t)((tmp & 0x0070) >> 4);
     header.RCODE = (uint8_t)(tmp & 0x000F);
 
@@ -75,7 +76,9 @@ void message::buffer2RR(uint8_t *&ptr, message::RRTYPE type) {
 }
 
 void message::unpackName(uint8_t *&ptr, std::string &name) {
+
     while (*ptr) {
+
         if ((*ptr & 0xc0) == 0xc0) {
             uint16_t offset;
             getUint16(offset, ptr);
@@ -85,12 +88,27 @@ void message::unpackName(uint8_t *&ptr, std::string &name) {
         }
         else {
             uint8_t len = *ptr;
+            std::cout << len << std::endl;
+            std::cout << *(ptr + 4) << std::endl;
+            std::cout << *(ptr + len + 1) << std::endl;
+            std::cout << "len : " << len << " " << *(ptr + len + 1) << std::endl;
             name.append((char *) ptr, len + 1);
             ptr += len + 1;
         }
     }
     name.append(1, '\0');
     ptr++;
+
+    /*
+    while (*ptr != 0) {
+        name += *ptr;
+        ptr++;
+    }
+
+    std::cout << name << std::endl;*/
+
+
+
 }
 
 void message::getUint32(uint32_t &var, uint8_t *&ptr) {
