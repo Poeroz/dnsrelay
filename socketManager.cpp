@@ -9,7 +9,7 @@
 socketManager::socketManager() {
     hostSocket = socket(PF_INET, SOCK_DGRAM, UDP_PROTOCOL);
     if (hostSocket < 0) {
-        ERR_EXIT("socket error");
+        DBG_ERROR("Failed to establish socket.");
     }
     else {
         sockaddr_in hostAddr;
@@ -18,10 +18,10 @@ socketManager::socketManager() {
         hostAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
         if (bind(hostSocket, (sockaddr *)&hostAddr, sizeof(sockaddr_in)) < 0) {
-            ERR_EXIT("bind error");
+            DBG_ERROR("Failed to bind socket to sockaddr.");
         }
 
-        std::cout << "socket initialized successfully." << std::endl;
+        DBG_MESSAGE("socket initialized successfully.");
     }
 }
 
@@ -31,7 +31,7 @@ int socketManager::recvBuffer(uint8_t *buffer, sockaddr_in &senderAddr, time_t &
     recvTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     int recvLen = recvfrom(hostSocket, buffer, MAX_LEN, 0, (sockaddr *)&senderAddr, &addrLen);
     if (recvLen <= 0) {
-        ERR_EXIT("connect error");
+        DBG_ERROR("Failed to connect.");
     }
     else {
         return recvLen;
@@ -39,14 +39,8 @@ int socketManager::recvBuffer(uint8_t *buffer, sockaddr_in &senderAddr, time_t &
 }
 
 void socketManager::sendBuffer(uint8_t *buffer, int bufferSize, sockaddr_in recvAddr) {
-//    std::cout << "send address" << std::endl;
-//    std::cout << recvAddr.sin_addr.s_addr << std::endl;
-//    std::cout << recvAddr.sin_port << std::endl;
-
     int status = sendto(hostSocket, buffer, bufferSize, 0, (const sockaddr *)&recvAddr, sizeof(sockaddr_in));
-    std::cout << "send status : ";
-    std::cout << status << std::endl;
     if (status < 0) {
-        ERR_EXIT("send error");
+        DBG_ERROR("Failed to send.");
     }
 }

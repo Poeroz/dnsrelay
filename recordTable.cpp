@@ -12,6 +12,7 @@ uint16_t recordTable::insertRecord(message msg) {
     record tmpRecord;
     tmpRecord.id = msg.header.ID;
     tmpRecord.senderAddr = msg.senderAddr;
+    tmpRecord.arriveTime = std::chrono::system_clock::now();
     table.push_back(std::make_pair(++currentID, tmpRecord));
     return currentID;
 }

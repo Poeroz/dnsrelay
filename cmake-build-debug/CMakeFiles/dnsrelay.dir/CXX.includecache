@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/poeroz/Downloads/dnsrelay/message.cpp
-message.h
-/Users/poeroz/Downloads/dnsrelay/message.h
-
 /Users/poeroz/Downloads/dnsrelay/message.h
 string
 -
@@ -19,6 +15,46 @@ vector
 -
 iostream
 -
+socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+
+/Users/poeroz/Downloads/dnsrelay/nameTable.h
+iostream
+-
+fstream
+-
+string
+-
+map
+-
+socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+
+/Users/poeroz/Downloads/dnsrelay/parser.cpp
+parser.h
+/Users/poeroz/Downloads/dnsrelay/parser.h
+
+/Users/poeroz/Downloads/dnsrelay/parser.h
+nameTable.h
+/Users/poeroz/Downloads/dnsrelay/nameTable.h
+socketManager.h
+/Users/poeroz/Downloads/dnsrelay/socketManager.h
+recordTable.h
+/Users/poeroz/Downloads/dnsrelay/recordTable.h
+string
+-
+
+/Users/poeroz/Downloads/dnsrelay/recordTable.h
+map
+-
+cstdint
+-
+string
+-
+chrono
+-
+message.h
+/Users/poeroz/Downloads/dnsrelay/message.h
 socketHeader.h
 /Users/poeroz/Downloads/dnsrelay/socketHeader.h
 
@@ -36,5 +72,11 @@ unistd.h
 stdlib.h
 -
 stdio.h
+-
+
+/Users/poeroz/Downloads/dnsrelay/socketManager.h
+message.h
+/Users/poeroz/Downloads/dnsrelay/message.h
+iostream
 -
 

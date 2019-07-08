@@ -5,16 +5,11 @@
 #ifndef DNSRELAY_SOCKETMANAGER_H
 #define DNSRELAY_SOCKETMANAGER_H
 
-#include "socketHeader.h"
 #include "message.h"
 #include <iostream>
 
-#define ERR_EXIT(m) \
-    do { \
-    perror(m); \
-    exit(EXIT_FAILURE); \
-    } while(0)
-
+#define DBG_ERROR(m) std::cout << "ERROR : " << (m) << std::endl
+#define DBG_MESSAGE(m) std::cout << "MESSAGE : " << (m) << std::endl
 #define SOCKET int
 #define UDP_PORT 53
 #define UDP_PROTOCOL 0
@@ -27,7 +22,7 @@ public:
     ~socketManager();
     void sendBuffer(uint8_t *buffer, int bufferSize, sockaddr_in recvAddr);
     int recvBuffer(uint8_t *buffer, sockaddr_in &senderAddr, time_t &recvTime);
-    SOCKET hostSocket, serverSocket;
+    SOCKET hostSocket;
 };
 
 

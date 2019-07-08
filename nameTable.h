@@ -7,6 +7,7 @@
 
 #define FILE_PATH "/Users/poeroz/Downloads/dnsrelay/dnsrelay.txt"
 #define DBG_PATH "/Users/poeroz/Downloads/dnsrelay/debug.txt"
+#define DBG_ERROR(m) std::cout << "ERROR : " << (m) << std::endl
 
 #include <iostream>
 #include <fstream>

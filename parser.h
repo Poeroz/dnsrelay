@@ -5,10 +5,8 @@
 #ifndef DNSRELAY_PARSER_H
 #define DNSRELAY_PARSER_H
 
-#include "message.h"
 #include "nameTable.h"
 #include "socketManager.h"
-#include "socketHeader.h"
 #include "recordTable.h"
 #include <string>
 
@@ -31,7 +29,9 @@ private:
     recordTable *records;
     nameTable *table;
     socketManager *sockMan;
+
     parser::MSGTYPE getType();
+
     void parseRequest();
     void parseResponse();
     void sendToServer();

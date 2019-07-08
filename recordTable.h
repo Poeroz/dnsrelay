@@ -23,12 +23,15 @@ public:
     };
 
     recordTable();
-    uint16_t currentID;
-    std::vector<std::pair<uint16_t, recordTable::record> > table;
+
 
     uint16_t insertRecord(message msg);
     bool findRecord(uint16_t id, record &tmpRecord);
     void deleteTimeoutRecord();
+
+private:
+    uint16_t currentID;
+    std::vector<std::pair<uint16_t, recordTable::record> > table;
 };
 
 

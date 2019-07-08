@@ -108,15 +108,22 @@ public:
     message() = default;
     message(uint8_t *buffer, int bufferSize, sockaddr_in senderAddr);
 
-    void unpackName(uint8_t *&ptr, std::string &name);
     static std::string transName(std::string name);
 
     void buffer2Struct(uint8_t *ptr);
+    void struct2Buffer(uint8_t *ptr, int &bufferSize);
+
+    void debug();
+
+
+private:
+    void debug_str(std::string str);
+    void unpackName(uint8_t *&ptr, std::string &name);
+
     void buffer2Header(uint8_t *&ptr);
     void buffer2Question(uint8_t *&ptr);
     void buffer2RR(uint8_t *&ptr, message::RRTYPE type);
 
-    void struct2Buffer(uint8_t *ptr, int &bufferSize);
     void header2Buffer(uint8_t *&ptr, int &bufferSize);
     void question2Buffer(uint8_t *&ptr, int &bufferSize);
     void RR2Buffer(uint8_t *&ptr, int &bufferSize, RRTYPE type);
@@ -125,9 +132,6 @@ public:
     void getUint32(uint32_t &var, uint8_t *&ptr);
 
     void putUint16(uint16_t var, uint8_t *&ptr, int &bufferSize);
-    void putUint32(uint32_t var, uint8_t *&ptr, int &bufferSize);
-
-    void debug();
-};
+    void putUint32(uint32_t var, uint8_t *&ptr, int &bufferSize);};
 
 #endif //DNSRELAY_MESSAGE_H

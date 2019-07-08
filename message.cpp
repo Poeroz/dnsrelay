@@ -24,26 +24,23 @@ void message::buffer2Struct(uint8_t *ptr) {
 }
 
 void message::buffer2Header(uint8_t *&ptr) {
-    getUint16(header.ID, ptr);
-//    std::cout << "get ID : " << header.ID;
     uint16_t tmp;
+
+    getUint16(header.ID, ptr);
     getUint16(tmp, ptr);
 
-    std::cout << "unpack flags : " << tmp << std::endl;
-
-    header.QR = (bool)((tmp & 0x8000) >> 15);
-    header.OPCODE = (uint8_t)((tmp & 0x7800) >> 11);
-    header.AA = (bool)((tmp & 0x0400) >> 10);
-    header.TC = (bool)((tmp & 0x0200) >> 9);
-    header.RD = (bool)((tmp & 0x0100) >> 8);
-    header.RA = (bool)((tmp & 0x0080) >> 7);
-
-    header.ZERO = (uint8_t)((tmp & 0x0070) >> 4);
-    header.RCODE = (uint8_t)(tmp & 0x000F);
+    header.QR       = (bool)        ((tmp & 0x8000) >> 15);
+    header.OPCODE   = (uint8_t)     ((tmp & 0x7800) >> 11);
+    header.AA       = (bool)        ((tmp & 0x0400) >> 10);
+    header.TC       = (bool)        ((tmp & 0x0200) >> 9);
+    header.RD       = (bool)        ((tmp & 0x0100) >> 8);
+    header.RA       = (bool)        ((tmp & 0x0080) >> 7);
+    header.ZERO     = (uint8_t)     ((tmp & 0x0070) >> 4);
+    header.RCODE    = (uint8_t)     ((tmp & 0x000F));
 
     getUint16(header.QDCOUNT, ptr);
-    for (int i = 0; i < 3; i++) {
-        getUint16(header.RRCOUNT[i], ptr);
+    for (unsigned short &i : header.RRCOUNT) {
+        getUint16(i, ptr);
     }
 }
 
@@ -77,8 +74,7 @@ void message::buffer2RR(uint8_t *&ptr, message::RRTYPE type) {
 
 void message::unpackName(uint8_t *&ptr, std::string &name) {
 
-    while (*ptr) {
-
+    while (*ptr != 0) {
         if ((*ptr & 0xc0) == 0xc0) {
             uint16_t offset;
             getUint16(offset, ptr);
@@ -88,27 +84,12 @@ void message::unpackName(uint8_t *&ptr, std::string &name) {
         }
         else {
             uint8_t len = *ptr;
-            std::cout << len << std::endl;
-            std::cout << *(ptr + 4) << std::endl;
-            std::cout << *(ptr + len + 1) << std::endl;
-            std::cout << "len : " << len << " " << *(ptr + len + 1) << std::endl;
-            name.append((char *) ptr, len + 1);
+            name.append((char *)ptr, len + 1);
             ptr += len + 1;
         }
     }
     name.append(1, '\0');
     ptr++;
-
-    /*
-    while (*ptr != 0) {
-        name += *ptr;
-        ptr++;
-    }
-
-    std::cout << name << std::endl;*/
-
-
-
 }
 
 void message::getUint32(uint32_t &var, uint8_t *&ptr) {
@@ -124,7 +105,6 @@ void message::getUint16(uint16_t &var, uint8_t *&ptr) {
 void message::putUint16(uint16_t var, uint8_t *&ptr, int &bufferSize) {
     auto intPtr = (uint16_t *)ptr;
     *intPtr = (uint16_t)(htons(var));
-//    std::cout << var << ' ' << (uint16_t)htons(var) << std::endl;
     bufferSize += sizeof(uint16_t);
     ptr += sizeof(uint16_t);
 }
@@ -161,23 +141,20 @@ void message::struct2Buffer(uint8_t *ptr, int &bufferSize) {
 
 void message::header2Buffer(uint8_t *&ptr, int &bufferSize) {
     uint16_t tmp = 0;
-    tmp |= header.QR << 15;
-    tmp |= header.OPCODE << 11;
-    tmp |= header.AA << 10;
-    tmp |= header.TC << 9;
-    tmp |= header.RD << 8;
-    tmp |= header.RA << 7;
-    tmp |= header.ZERO << 4;
+    tmp |= header.QR        << 15;
+    tmp |= header.OPCODE    << 11;
+    tmp |= header.AA        << 10;
+    tmp |= header.TC        << 9;
+    tmp |= header.RD        << 8;
+    tmp |= header.RA        << 7;
+    tmp |= header.ZERO      << 4;
     tmp |= header.RCODE;
 
-    std::cout << "pack flags : " << tmp << std::endl;
-
-//    std::cout << "ID : " << header.ID << std::endl;
     putUint16(header.ID, ptr, bufferSize);
     putUint16(tmp, ptr, bufferSize);
     putUint16(header.QDCOUNT, ptr, bufferSize);
-    for (int i = 0; i < 3; i++) {
-        putUint16(header.RRCOUNT[i], ptr, bufferSize);
+    for (unsigned short i : header.RRCOUNT) {
+        putUint16(i, ptr, bufferSize);
     }
 }
 
@@ -209,71 +186,101 @@ void message::RR2Buffer(uint8_t *&ptr, int &bufferSize, message::RRTYPE type) {
 }
 
 void message::debug() {
-    std::cout << "-------------Header-------------" << std::endl << std::endl;
-    std::cout << "ID : " << header.ID << std::endl;
-    std::cout << "QR : " << header.QR << std::endl;
-    std::cout << "Opcode : " << (unsigned)header.OPCODE << std::endl;
-    std::cout << "AA : " << header.AA << std::endl;
-    std::cout << "TC : " << header.TC << std::endl;
-    std::cout << "RD : " << header.RD << std::endl;
-    std::cout << "RA : " << header.RD << std::endl;
-    std::cout << "RCODE : " << (unsigned)header.RCODE << std::endl;
-    std::cout << "QDCOUNT : " << header.QDCOUNT << std::endl;
-    std::cout << "ANCOUNT : " << header.RRCOUNT[message::ANSWER] << std::endl;
-    std::cout << "NSCOUNT : " << header.RRCOUNT[message::AUTHORITY] << std::endl;
-    std::cout << "ARCOUNT : " << header.RRCOUNT[message::ADDTIONAL] << std::endl;
+    std::cout << "------------------Header------------------" << std::endl;
+    std::cout << "ID        : " << header.ID << std::endl;
+    std::cout << "QR        : " << header.QR << std::endl;
+    std::cout << "Opcode    : " << (unsigned)header.OPCODE << std::endl;
+    std::cout << "AA        : " << header.AA << std::endl;
+    std::cout << "TC        : " << header.TC << std::endl;
+    std::cout << "RD        : " << header.RD << std::endl;
+    std::cout << "RA        : " << header.RD << std::endl;
+    std::cout << "RCODE     : " << (unsigned)header.RCODE << std::endl;
+    std::cout << "QDCOUNT   : " << header.QDCOUNT << std::endl;
+    std::cout << "ANCOUNT   : " << header.RRCOUNT[message::ANSWER] << std::endl;
+    std::cout << "NSCOUNT   : " << header.RRCOUNT[message::AUTHORITY] << std::endl;
+    std::cout << "ARCOUNT   : " << header.RRCOUNT[message::ADDTIONAL] << std::endl;
 
-    std::cout << std::endl << "-------------Question-------------" << std::endl << std::endl;
+    std::cout << "-----------------Question-----------------" << std::endl;
     for (int i = 0; i < question.size(); i++) {
-        std::cout << "# question " << i << std::endl;
-        std::cout << "QNAME : " << question[i].QNAME << std::endl;
-        std::cout << "QTYPE : " << question[i].QTYPE << std::endl;
-        std::cout << "QCLASS : " << question[i].QCLASS << std::endl;
-        std::cout << std::endl;
+        std::cout << "[question " << i << "]" << std::endl;
+        std::cout << "QNAME     : ";
+        debug_str(question[i].QNAME);
+        std::cout << "QTYPE     : " << question[i].QTYPE << std::endl;
+        std::cout << "QCLASS    : " << question[i].QCLASS << std::endl;
     }
 
-    std::cout << std::endl << "-------------Answer-------------" << std::endl << std::endl;
+    std::cout << "------------------Answer------------------" << std::endl;
     for (int i = 0; i < RR[message::ANSWER].size(); i++) {
-        std::cout << "# answer " << i << std::endl;
-        std::cout << "NAME : " << RR[message::ANSWER][i].NAME << std::endl;
-        std::cout << "TYPE : " << RR[message::ANSWER][i].TYPE << std::endl;
-        std::cout << "CLASS : " << RR[message::ANSWER][i].CLASS << std::endl;
-        std::cout << "TTL : " << RR[message::ANSWER][i].TTL << std::endl;
-        std::cout << "RDLENGTH : " << RR[message::ANSWER][i].RDLENGTH << std::endl;
-        std::cout << "RDATA : " << std::endl;
+        std::cout << "[answer " << i << "]" << std::endl;
+        std::cout << "NAME      : ";
+        debug_str(RR[message::ANSWER][i].NAME);
+        std::cout << "TYPE      : " << RR[message::ANSWER][i].TYPE << std::endl;
+        std::cout << "CLASS     : " << RR[message::ANSWER][i].CLASS << std::endl;
+        std::cout << "TTL       : " << RR[message::ANSWER][i].TTL << std::endl;
+        std::cout << "RDLENGTH  : " << RR[message::ANSWER][i].RDLENGTH << std::endl;
+        std::cout << "RDATA     : " << std::endl;
         for (int j = 0; j < RR[message::ANSWER][i].RDLENGTH; j++) {
-            std::cout << (unsigned)RR[message::ANSWER][i].RDATA[j] << std::endl;
+            std::cout << (unsigned) RR[message::ANSWER][i].RDATA[j];
+            if (j == RR[message::ANSWER][i].RDLENGTH - 1) {
+                std::cout << std::endl;
+            } else {
+                std::cout << ", ";
+            }
         }
-        std::cout << std::endl;
     }
 
-    std::cout << std::endl << "-------------Authority-------------" << std::endl << std::endl;
+    std::cout << "-----------------Authority----------------" << std::endl;
     for (int i = 0; i < RR[message::AUTHORITY].size(); i++) {
-        std::cout << "# authority " << i << std::endl;
-        std::cout << "NAME : " << RR[message::AUTHORITY][i].NAME << std::endl;
-        std::cout << "TYPE : " << RR[message::AUTHORITY][i].TYPE << std::endl;
-        std::cout << "CLASS : " << RR[message::AUTHORITY][i].CLASS << std::endl;
-        std::cout << "TTL : " << RR[message::AUTHORITY][i].TTL << std::endl;
-        std::cout << "RDLENGTH : " << RR[message::AUTHORITY][i].RDLENGTH << std::endl;
-        std::cout << "RDATA : " << std::endl;
+        std::cout << "[authority " << i << "]" << std::endl;
+        std::cout << "NAME      : ";
+        debug_str(RR[message::AUTHORITY][i].NAME);
+        std::cout << "TYPE      : " << RR[message::AUTHORITY][i].TYPE << std::endl;
+        std::cout << "CLASS     : " << RR[message::AUTHORITY][i].CLASS << std::endl;
+        std::cout << "TTL       : " << RR[message::AUTHORITY][i].TTL << std::endl;
+        std::cout << "RDLENGTH  : " << RR[message::AUTHORITY][i].RDLENGTH << std::endl;
+        std::cout << "RDATA     : " << std::endl;
         for (int j = 0; j < RR[message::AUTHORITY][i].RDLENGTH; j++) {
-            std::cout << (unsigned)RR[message::AUTHORITY][i].RDATA[j] << std::endl;
+            std::cout << (unsigned)RR[message::AUTHORITY][i].RDATA[j];
+            if (j == RR[message::AUTHORITY][i].RDLENGTH - 1) {
+                std::cout << std::endl;
+            } else {
+                std::cout << ", ";
+            }
         }
-        std::cout << std::endl;
     }
 
-    std::cout << std::endl << "-------------Additional-------------" << std::endl << std::endl;
+    std::cout << "----------------Additional----------------" << std::endl;
     for (int i = 0; i < RR[message::ADDTIONAL].size(); i++) {
-        std::cout << "# additional " << i << std::endl;
-        std::cout << "NAME : " << RR[message::ADDTIONAL][i].NAME << std::endl;;
-        std::cout << "TYPE : " << RR[message::ADDTIONAL][i].TYPE << std::endl;
-        std::cout << "CLASS : " << RR[message::ADDTIONAL][i].CLASS << std::endl;
-        std::cout << "TTL : " << RR[message::ADDTIONAL][i].TTL << std::endl;
-        std::cout << "RDLENGTH : " << RR[message::ADDTIONAL][i].RDLENGTH << std::endl;
-        std::cout << "RDATA : " << std::endl;
+        std::cout << "[additional " << i << "]" << std::endl;
+        std::cout << "NAME      : ";
+        debug_str(RR[message::ADDTIONAL][i].NAME);
+        std::cout << "TYPE      : " << RR[message::ADDTIONAL][i].TYPE << std::endl;
+        std::cout << "CLASS     : " << RR[message::ADDTIONAL][i].CLASS << std::endl;
+        std::cout << "TTL       : " << RR[message::ADDTIONAL][i].TTL << std::endl;
+        std::cout << "RDLENGTH  : " << RR[message::ADDTIONAL][i].RDLENGTH << std::endl;
+        std::cout << "RDATA     : " << std::endl;
         for (int j = 0; j < RR[message::ADDTIONAL][i].RDLENGTH; j++) {
-            std::cout << (unsigned)RR[message::ADDTIONAL][i].RDATA[j] << std::endl;
+            std::cout << (unsigned) RR[message::ADDTIONAL][i].RDATA[j] << std::endl;
+            if (j == RR[message::ADDTIONAL][i].RDLENGTH - 1) {
+                std::cout << std::endl;
+            } else {
+                std::cout << ", ";
+            }
         }
-        std::cout << std::endl;
     }
+}
+
+void message::debug_str(std::string str) {
+    int cnt = 0;
+    for (int i = 0; i < str.length(); i++) {
+        if (!cnt) {
+            cnt = str[i];
+            std::cout << (char)(str[i] + '0');
+        }
+        else {
+            cnt--;
+            std::cout << str[i];
+        }
+    }
+    std::cout << std::endl;
 }

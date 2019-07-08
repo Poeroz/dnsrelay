@@ -3,7 +3,6 @@
 //
 
 #include "parser.h"
-#include "recordTable.h"
 
 parser::parser() {
     table = new nameTable();
@@ -14,7 +13,7 @@ parser::parser() {
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(UDP_PORT);
     if (!inet_pton(AF_INET, SERVER_DNS_IP, (void *)&(serverAddr.sin_addr))) {
-        ERR_EXIT("server dns IP error");
+        DBG_ERROR("Cannot convert server's IP to sin_addr.");
     }
 }
 
@@ -23,22 +22,21 @@ void parser::receive() {
     bufferSize = sockMan->recvBuffer(buffer, senderAddr, recvTime);
     msg = message(buffer, bufferSize, senderAddr);
 
-//    std::cout << "receive address" << std::endl;
-//    std::cout << senderAddr.sin_addr.s_addr << std::endl;
-//    std::cout << senderAddr.sin_port << std::endl;
-
-    std::cout << "receive message : " << std::endl;
-    msg.debug();
-
     MSGTYPE type = getType();
     if (type == REQUEST) {
+        DBG_MESSAGE("DNS-relay receives a query from client.");
+        msg.debug();
         parseRequest();
     }
     else if (type == RESPONSE) {
+        DBG_MESSAGE("DNS-relay receives a response from server.");
+        msg.debug();
         parseResponse();
     }
     else {
-
+        DBG_MESSAGE("DNS-relay receives OTHER message.");
+        msg.debug();
+        sendToServer();
     }
 }
 
@@ -55,31 +53,40 @@ parser::MSGTYPE parser::getType() {
 }
 
 void parser::parseRequest() {
-    bool flag = true;
-    for (auto query : msg.question) {
+    bool flag = false;
+    if (msg.question.size() == 1) {
+        auto query = msg.question.front();
         if (query.QTYPE == 1 && query.QCLASS == 1) {
-            std::string name = message::transName(query.QNAME);
-            uint32_t IP;
-            if (table->query(name, IP)) {
-                std::cout << "Successfully founded in local table." << std::endl;
-                addAnswerSection(IP, query.QNAME);
-            }
-            else {
-                std::cout << "Not founded locally, to the server..." << std::endl;
-                sendToServer();
-                flag = false;
-                break;
-            }
+            flag = true;
         }
     }
-    if (flag) {
-        uint8_t buffer[MAX_LEN];
-        memset(buffer, 0, sizeof(buffer));
-        int bufferSize = 0;
-        msg.struct2Buffer(buffer, bufferSize);
-        msg.debug();
 
-        sockMan->sendBuffer(buffer, bufferSize, msg.senderAddr);
+    if (flag) {
+        auto query = msg.question.front();
+        std::string name = message::transName(query.QNAME);
+        uint32_t IP;
+        if (table->query(name, IP)) {
+            addAnswerSection(IP, query.QNAME);
+
+            DBG_MESSAGE("Successfully found in local table.");
+            DBG_MESSAGE("DNS-relay sends the answer to the client.");
+            msg.debug();
+
+            uint8_t buffer[MAX_LEN];
+            memset(buffer, 0, sizeof(buffer));
+            int bufferSize = 0;
+            msg.struct2Buffer(buffer, bufferSize);
+
+            sockMan->sendBuffer(buffer, bufferSize, msg.senderAddr);
+        }
+        else {
+            DBG_MESSAGE("Not found locally, send to the server...");
+            sendToServer();
+        }
+    }
+    else {
+        DBG_MESSAGE("DNS-relay can not handle this message, send to the server...");
+        sendToServer();
     }
 }
 
@@ -95,6 +102,7 @@ void parser::addAnswerSection(uint32_t IP, std::string name) {
         message::RESOURCE_RECORD tmpAnswer;
         tmpAnswer.NAME = name;
         tmpAnswer.TYPE = 1;
+        tmpAnswer.TTL = 3600;
         tmpAnswer.CLASS = 1;
         tmpAnswer.RDLENGTH = 4;
         tmpAnswer.RDATA.assign((uint8_t *)&IP, (uint8_t *)(&IP + 1));
@@ -106,6 +114,7 @@ void parser::sendToServer() {
     records->deleteTimeoutRecord();
     auto newID = records->insertRecord(msg);
     auto IDptr = (uint16_t *)buffer;
+    DBG_MESSAGE("ID transfer : " + std::to_string(ntohs(*IDptr)) + " -> " + std::to_string(newID));
     *IDptr = htons(newID);
     sockMan->sendBuffer(buffer, bufferSize, serverAddr);
 }
@@ -113,10 +122,11 @@ void parser::sendToServer() {
 void parser::parseResponse() {
     recordTable::record tmpRecord;
     if (!records->findRecord(msg.header.ID, tmpRecord)) {
-        ERR_EXIT("record error");
+        DBG_ERROR("Record not found.");
     }
     else {
         auto IDptr = (uint16_t *)buffer;
+        DBG_MESSAGE("ID transfer : " + std::to_string(ntohs(*IDptr)) + " -> " + std::to_string(tmpRecord.id));
         *IDptr = htons(tmpRecord.id);
         sockMan->sendBuffer(buffer, bufferSize, tmpRecord.senderAddr);
     }
