@@ -2,7 +2,7 @@
 // Created by Poeroz on 2019/7/6.
 //
 
-#include "recordTable.h"
+#include "../lib/recordTable.h"
 
 recordTable::recordTable() {
     currentID = 0;

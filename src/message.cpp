@@ -2,7 +2,7 @@
 // Created by Poeroz on 2019/7/5.
 //
 
-#include "message.h"
+#include "../lib/message.h"
 
 message::message(uint8_t *buffer, int bufferSize, sockaddr_in senderAddr) {
     this->senderAddr = senderAddr;

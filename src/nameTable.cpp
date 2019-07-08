@@ -2,7 +2,7 @@
 // Created by Poeroz on 2019/7/4.
 //
 
-#include "nameTable.h"
+#include "../lib/nameTable.h"
 
 nameTable::nameTable(){
     nameToIP.clear();

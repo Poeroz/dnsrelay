@@ -123,167 +123,167 @@ dnsrelay/fast:
 	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/build
 .PHONY : dnsrelay/fast
 
-main.o: main.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-message.o: message.cpp.o
-
-.PHONY : message.o
+.PHONY : src/main.o
 
 # target to build an object file
-message.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/message.cpp.o
-.PHONY : message.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-message.i: message.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : message.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-message.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/message.cpp.i
-.PHONY : message.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-message.s: message.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : message.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-message.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/message.cpp.s
-.PHONY : message.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
-nameTable.o: nameTable.cpp.o
+src/message.o: src/message.cpp.o
 
-.PHONY : nameTable.o
+.PHONY : src/message.o
 
 # target to build an object file
-nameTable.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/nameTable.cpp.o
-.PHONY : nameTable.cpp.o
+src/message.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/message.cpp.o
+.PHONY : src/message.cpp.o
 
-nameTable.i: nameTable.cpp.i
+src/message.i: src/message.cpp.i
 
-.PHONY : nameTable.i
+.PHONY : src/message.i
 
 # target to preprocess a source file
-nameTable.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/nameTable.cpp.i
-.PHONY : nameTable.cpp.i
+src/message.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/message.cpp.i
+.PHONY : src/message.cpp.i
 
-nameTable.s: nameTable.cpp.s
+src/message.s: src/message.cpp.s
 
-.PHONY : nameTable.s
+.PHONY : src/message.s
 
 # target to generate assembly for a file
-nameTable.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/nameTable.cpp.s
-.PHONY : nameTable.cpp.s
+src/message.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/message.cpp.s
+.PHONY : src/message.cpp.s
 
-parser.o: parser.cpp.o
+src/nameTable.o: src/nameTable.cpp.o
 
-.PHONY : parser.o
+.PHONY : src/nameTable.o
 
 # target to build an object file
-parser.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/parser.cpp.o
-.PHONY : parser.cpp.o
+src/nameTable.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/nameTable.cpp.o
+.PHONY : src/nameTable.cpp.o
 
-parser.i: parser.cpp.i
+src/nameTable.i: src/nameTable.cpp.i
 
-.PHONY : parser.i
+.PHONY : src/nameTable.i
 
 # target to preprocess a source file
-parser.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/parser.cpp.i
-.PHONY : parser.cpp.i
+src/nameTable.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/nameTable.cpp.i
+.PHONY : src/nameTable.cpp.i
 
-parser.s: parser.cpp.s
+src/nameTable.s: src/nameTable.cpp.s
 
-.PHONY : parser.s
+.PHONY : src/nameTable.s
 
 # target to generate assembly for a file
-parser.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/parser.cpp.s
-.PHONY : parser.cpp.s
+src/nameTable.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/nameTable.cpp.s
+.PHONY : src/nameTable.cpp.s
 
-recordTable.o: recordTable.cpp.o
+src/parser.o: src/parser.cpp.o
 
-.PHONY : recordTable.o
+.PHONY : src/parser.o
 
 # target to build an object file
-recordTable.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/recordTable.cpp.o
-.PHONY : recordTable.cpp.o
+src/parser.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/parser.cpp.o
+.PHONY : src/parser.cpp.o
 
-recordTable.i: recordTable.cpp.i
+src/parser.i: src/parser.cpp.i
 
-.PHONY : recordTable.i
+.PHONY : src/parser.i
 
 # target to preprocess a source file
-recordTable.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/recordTable.cpp.i
-.PHONY : recordTable.cpp.i
+src/parser.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/parser.cpp.i
+.PHONY : src/parser.cpp.i
 
-recordTable.s: recordTable.cpp.s
+src/parser.s: src/parser.cpp.s
 
-.PHONY : recordTable.s
+.PHONY : src/parser.s
 
 # target to generate assembly for a file
-recordTable.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/recordTable.cpp.s
-.PHONY : recordTable.cpp.s
+src/parser.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/parser.cpp.s
+.PHONY : src/parser.cpp.s
 
-socketManager.o: socketManager.cpp.o
+src/recordTable.o: src/recordTable.cpp.o
 
-.PHONY : socketManager.o
+.PHONY : src/recordTable.o
 
 # target to build an object file
-socketManager.cpp.o:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/socketManager.cpp.o
-.PHONY : socketManager.cpp.o
+src/recordTable.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/recordTable.cpp.o
+.PHONY : src/recordTable.cpp.o
 
-socketManager.i: socketManager.cpp.i
+src/recordTable.i: src/recordTable.cpp.i
 
-.PHONY : socketManager.i
+.PHONY : src/recordTable.i
 
 # target to preprocess a source file
-socketManager.cpp.i:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/socketManager.cpp.i
-.PHONY : socketManager.cpp.i
+src/recordTable.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/recordTable.cpp.i
+.PHONY : src/recordTable.cpp.i
 
-socketManager.s: socketManager.cpp.s
+src/recordTable.s: src/recordTable.cpp.s
 
-.PHONY : socketManager.s
+.PHONY : src/recordTable.s
 
 # target to generate assembly for a file
-socketManager.cpp.s:
-	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/socketManager.cpp.s
-.PHONY : socketManager.cpp.s
+src/recordTable.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/recordTable.cpp.s
+.PHONY : src/recordTable.cpp.s
+
+src/socketManager.o: src/socketManager.cpp.o
+
+.PHONY : src/socketManager.o
+
+# target to build an object file
+src/socketManager.cpp.o:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/socketManager.cpp.o
+.PHONY : src/socketManager.cpp.o
+
+src/socketManager.i: src/socketManager.cpp.i
+
+.PHONY : src/socketManager.i
+
+# target to preprocess a source file
+src/socketManager.cpp.i:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/socketManager.cpp.i
+.PHONY : src/socketManager.cpp.i
+
+src/socketManager.s: src/socketManager.cpp.s
+
+.PHONY : src/socketManager.s
+
+# target to generate assembly for a file
+src/socketManager.cpp.s:
+	$(MAKE) -f CMakeFiles/dnsrelay.dir/build.make CMakeFiles/dnsrelay.dir/src/socketManager.cpp.s
+.PHONY : src/socketManager.cpp.s
 
 # Help Target
 help:
@@ -294,24 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... dnsrelay"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... message.o"
-	@echo "... message.i"
-	@echo "... message.s"
-	@echo "... nameTable.o"
-	@echo "... nameTable.i"
-	@echo "... nameTable.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
-	@echo "... recordTable.o"
-	@echo "... recordTable.i"
-	@echo "... recordTable.s"
-	@echo "... socketManager.o"
-	@echo "... socketManager.i"
-	@echo "... socketManager.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/message.o"
+	@echo "... src/message.i"
+	@echo "... src/message.s"
+	@echo "... src/nameTable.o"
+	@echo "... src/nameTable.i"
+	@echo "... src/nameTable.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
+	@echo "... src/recordTable.o"
+	@echo "... src/recordTable.i"
+	@echo "... src/recordTable.s"
+	@echo "... src/socketManager.o"
+	@echo "... src/socketManager.i"
+	@echo "... src/socketManager.s"
 .PHONY : help
 
 

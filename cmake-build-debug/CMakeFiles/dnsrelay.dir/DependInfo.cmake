@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/poeroz/Downloads/dnsrelay/main.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/main.cpp.o"
-  "/Users/poeroz/Downloads/dnsrelay/message.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/message.cpp.o"
-  "/Users/poeroz/Downloads/dnsrelay/nameTable.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/nameTable.cpp.o"
-  "/Users/poeroz/Downloads/dnsrelay/parser.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/parser.cpp.o"
-  "/Users/poeroz/Downloads/dnsrelay/recordTable.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/recordTable.cpp.o"
-  "/Users/poeroz/Downloads/dnsrelay/socketManager.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/socketManager.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/main.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/main.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/message.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/message.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/nameTable.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/nameTable.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/parser.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/parser.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/recordTable.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/recordTable.cpp.o"
+  "/Users/poeroz/Downloads/dnsrelay/src/socketManager.cpp" "/Users/poeroz/Downloads/dnsrelay/cmake-build-debug/CMakeFiles/dnsrelay.dir/src/socketManager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

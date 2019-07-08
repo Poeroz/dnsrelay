@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/poeroz/Downloads/dnsrelay/message.h
+/Users/poeroz/Downloads/dnsrelay/lib/message.h
 string
 -
 cstdint
@@ -16,9 +16,9 @@ vector
 iostream
 -
 socketHeader.h
-/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketHeader.h
 
-/Users/poeroz/Downloads/dnsrelay/nameTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/nameTable.h
 iostream
 -
 fstream
@@ -28,23 +28,19 @@ string
 map
 -
 socketHeader.h
-/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketHeader.h
 
-/Users/poeroz/Downloads/dnsrelay/parser.cpp
-parser.h
-/Users/poeroz/Downloads/dnsrelay/parser.h
-
-/Users/poeroz/Downloads/dnsrelay/parser.h
+/Users/poeroz/Downloads/dnsrelay/lib/parser.h
 nameTable.h
-/Users/poeroz/Downloads/dnsrelay/nameTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/nameTable.h
 socketManager.h
-/Users/poeroz/Downloads/dnsrelay/socketManager.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketManager.h
 recordTable.h
-/Users/poeroz/Downloads/dnsrelay/recordTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/recordTable.h
 string
 -
 
-/Users/poeroz/Downloads/dnsrelay/recordTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/recordTable.h
 map
 -
 cstdint
@@ -54,11 +50,11 @@ string
 chrono
 -
 message.h
-/Users/poeroz/Downloads/dnsrelay/message.h
+/Users/poeroz/Downloads/dnsrelay/lib/message.h
 socketHeader.h
-/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketHeader.h
 
-/Users/poeroz/Downloads/dnsrelay/socketHeader.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketHeader.h
 sys/types.h
 -
 sys/socket.h
@@ -74,9 +70,13 @@ stdlib.h
 stdio.h
 -
 
-/Users/poeroz/Downloads/dnsrelay/socketManager.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketManager.h
 message.h
-/Users/poeroz/Downloads/dnsrelay/message.h
+/Users/poeroz/Downloads/dnsrelay/lib/message.h
 iostream
 -
+
+/Users/poeroz/Downloads/dnsrelay/src/parser.cpp
+../lib/parser.h
+/Users/poeroz/Downloads/dnsrelay/lib/parser.h
 

@@ -2,7 +2,7 @@
 // Created by Poeroz on 2019/7/5.
 //
 
-#include "parser.h"
+#include "../lib/parser.h"
 
 parser::parser() {
     table = new nameTable();
@@ -128,6 +128,11 @@ void parser::parseResponse() {
         auto IDptr = (uint16_t *)buffer;
         DBG_MESSAGE("ID transfer : " + std::to_string(ntohs(*IDptr)) + " -> " + std::to_string(tmpRecord.id));
         *IDptr = htons(tmpRecord.id);
+        msg.buffer2Struct(buffer);
+
+        DBG_MESSAGE("DNS-relay sends the answer to the client.");
+        msg.debug();
+
         sockMan->sendBuffer(buffer, bufferSize, tmpRecord.senderAddr);
     }
 }

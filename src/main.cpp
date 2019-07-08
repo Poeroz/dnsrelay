@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "../lib/parser.h"
 
 int main() {
     parser *p = new parser();

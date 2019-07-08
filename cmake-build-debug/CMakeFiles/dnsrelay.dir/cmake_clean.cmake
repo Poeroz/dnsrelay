@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/dnsrelay.dir/main.cpp.o"
-  "CMakeFiles/dnsrelay.dir/nameTable.cpp.o"
-  "CMakeFiles/dnsrelay.dir/socketManager.cpp.o"
-  "CMakeFiles/dnsrelay.dir/parser.cpp.o"
-  "CMakeFiles/dnsrelay.dir/message.cpp.o"
-  "CMakeFiles/dnsrelay.dir/recordTable.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/main.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/nameTable.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/socketManager.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/parser.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/message.cpp.o"
+  "CMakeFiles/dnsrelay.dir/src/recordTable.cpp.o"
   "dnsrelay.pdb"
   "dnsrelay"
 )

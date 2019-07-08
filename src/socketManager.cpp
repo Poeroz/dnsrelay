@@ -4,7 +4,7 @@
 
 #include <cstring>
 #include <chrono>
-#include "socketManager.h"
+#include "../lib/socketManager.h"
 
 socketManager::socketManager() {
     hostSocket = socket(PF_INET, SOCK_DGRAM, UDP_PROTOCOL);
