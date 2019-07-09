@@ -35,7 +35,7 @@ private:
     void parseRequest();
     void parseResponse();
     void sendToServer();
-    void addAnswerSection(uint32_t IP, std::string name);
+    void addAnswerSection(uint32_t IP, std::string name, time_t ddl);
 };
 
 

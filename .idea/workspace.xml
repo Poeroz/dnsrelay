@@ -16,39 +16,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4122645d-e715-41bb-bdc7-a6299b6346af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RFC1034.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/file/RFC1034.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RFC1035.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/file/RFC1035.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/message.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/nameTable.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/parser.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/recordTable.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dnsrelay.dir/socketManager.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/dnsrelay" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/dnsrelay" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/dnsrelay.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/dnsrelay.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file/debug.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dnsrelay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file/dnsrelay.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/message.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/message.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nameTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/nameTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nameTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/nameTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recordTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/recordTable.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recordTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/recordTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketHeader.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketHeader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/socketManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file/dnsrelay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/file/dnsrelay.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/nameTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/nameTable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nameTable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/nameTable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,40 +49,40 @@
     <session id="-176577250">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="TXT" value="5" />
-          <entry key="cpp" value="13" />
-          <entry key="h" value="17" />
+          <entry key="cpp" value="16" />
+          <entry key="h" value="18" />
           <entry key="iosfwd" value="1" />
-          <entry key="txt" value="3" />
+          <entry key="txt" value="5" />
           <entry key="utility" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="32" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="ObjectiveC" value="36" />
+          <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="19204" />
-          <entry key="h" value="5807" />
-          <entry key="txt" value="682" />
+          <entry key="cpp" value="22238" />
+          <entry key="h" value="6601" />
+          <entry key="txt" value="700" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="25011" />
-          <entry key="PLAIN_TEXT" value="682" />
+          <entry key="ObjectiveC" value="28839" />
+          <entry key="PLAIN_TEXT" value="700" />
         </counts>
       </usages-collector>
     </session>
@@ -117,22 +90,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/message.h">
+        <entry file="file://$PROJECT_DIR$/src/message.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1976">
-              <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
-              <folding>
-                <element signature="e#97#114#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1487">
+              <caret line="251" column="37" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/parser.cpp">
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
+            <state relative-caret-position="57">
+              <caret line="3" column="112" selection-start-line="3" selection-start-column="112" selection-end-line="3" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/dnsrelay.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="907" column="35" lean-forward="true" selection-start-line="907" selection-start-column="35" selection-end-line="907" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -140,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/parser.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
               <folding>
                 <element signature="e#94#116#0" expanded="true" />
               </folding>
@@ -150,19 +129,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file/dnsrelay.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/recordTable.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="409">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -170,20 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/recordTable.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="133">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/socketManager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-              <folding>
-                <element signature="e#41#59#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/socketManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="-99">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
               <folding>
                 <element signature="e#108#128#0" expanded="true" />
               </folding>
@@ -203,8 +161,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nameTable.cpp">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/cache.txt">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -212,8 +179,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/nameTable.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="185">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding>
+                <element signature="e#237#256#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,6 +203,10 @@
       <find>www.taobao.com</find>
       <find>transName</find>
       <find>DBG_ERROR</find>
+      <find>test0</find>
+      <find>unpack</find>
+      <find>baidu</find>
+      <find>jd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,8 +229,13 @@
         <option value="$PROJECT_DIR$/nameTable.h" />
         <option value="$PROJECT_DIR$/nameTable.cpp" />
         <option value="$PROJECT_DIR$/parser.cpp" />
-        <option value="$PROJECT_DIR$/lib/nameTable.h" />
+        <option value="$PROJECT_DIR$/lib/parser.h" />
         <option value="$PROJECT_DIR$/src/parser.cpp" />
+        <option value="$PROJECT_DIR$/file/dnsrelay.txt" />
+        <option value="$PROJECT_DIR$/lib/nameTable.h" />
+        <option value="$PROJECT_DIR$/src/nameTable.cpp" />
+        <option value="$PROJECT_DIR$/file/cache.txt" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
@@ -266,7 +245,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="596" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -284,6 +264,16 @@
               <item name="dnsrelay" type="b2602c69:ProjectViewProjectNode" />
               <item name="dnsrelay" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dnsrelay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnsrelay" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnsrelay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnsrelay" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -292,7 +282,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="name&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/nameTable.cpp&#10;par&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.cpp&#10;parser&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.cpp&#10;pare&#9;null&#9;null&#10;mess&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/message.cpp&#10;main&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/main.cpp&#10;soc&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;sock&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;messa&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/message.cpp&#10;txt&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/dnsrelay.txt&#10;record&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/recordTable.cpp&#10;pars&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.h&#10;rec&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/recordTable.cpp&#10;s&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;MAX_LEN&#9;null&#9;null&#10;mes&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/message.h&#10;addanswer&#9;null&#9;null&#10;nameta&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/nameTable.h&#10;socke&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;parse&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.cpp&#10;transe&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/transer.h&#10;rfc&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/RFC1034.TXT&#10;socket&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.h&#10;}&#9;ACTION&#9;VimMotionUnmatchedBraceClose" />
+    <property name="SearchEverywhereHistoryKey" value="txt&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/file/dnsrelay.txt&#10;recor&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/src/recordTable.cpp&#10;mess&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/src/message.cpp&#10;par&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/lib/parser.h&#10;name&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/src/nameTable.cpp&#10;table&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/lib/nameTable.h&#10;parser&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.cpp&#10;pare&#9;null&#9;null&#10;main&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/main.cpp&#10;soc&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;sock&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;messa&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/message.cpp&#10;record&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/recordTable.cpp&#10;pars&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.h&#10;rec&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/recordTable.cpp&#10;s&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;MAX_LEN&#9;null&#9;null&#10;mes&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/message.h&#10;addanswer&#9;null&#9;null&#10;nameta&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/nameTable.h&#10;socke&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.cpp&#10;parse&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/parser.cpp&#10;transe&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/transer.h&#10;rfc&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/RFC1034.TXT&#10;socket&#9;FILE&#9;file:///Users/poeroz/Downloads/dnsrelay/socketManager.h&#10;}&#9;ACTION&#9;VimMotionUnmatchedBraceClose" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -346,23 +336,24 @@
       <workItem from="1562229195973" duration="1750000" />
       <workItem from="1562253999321" duration="56600000" />
       <workItem from="1562601542410" duration="142000" />
-      <workItem from="1562601783129" duration="7211000" />
+      <workItem from="1562601783129" duration="7390000" />
+      <workItem from="1562609696216" duration="12859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65703000" />
+    <option name="totallyTimeSpent" value="78741000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17826618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18009768" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49625668" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3614973" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -372,7 +363,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3272727" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3262032" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -462,99 +453,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/message.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/recordTable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/socketManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/message.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        <state relative-caret-position="175">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
           <folding>
             <element signature="e#97#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/parser.h">
+    <entry file="file://$PROJECT_DIR$/src/socketManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="532">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
-            <element signature="e#94#116#0" expanded="true" />
+            <element signature="e#41#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/recordTable.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/dnsrelay.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="907" column="35" lean-forward="true" selection-start-line="907" selection-start-column="35" selection-end-line="907" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        <state relative-caret-position="-99">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding>
             <element signature="e#108#128#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/dnsrelay.txt">
+    <entry file="file://$PROJECT_DIR$/lib/recordTable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/parser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#94#116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nameTable.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="375">
+          <caret line="109" column="62" selection-start-line="109" selection-start-column="62" selection-end-line="109" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/nameTable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="185">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <element signature="e#237#256#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/recordTable.cpp">
+    <entry file="file://$PROJECT_DIR$/file/cache.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser.cpp">
+    <entry file="file://$PROJECT_DIR$/src/message.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
+        <state relative-caret-position="1487">
+          <caret line="251" column="37" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="112" selection-start-line="3" selection-start-column="112" selection-end-line="3" selection-end-column="112" />
         </state>
       </provider>
     </entry>

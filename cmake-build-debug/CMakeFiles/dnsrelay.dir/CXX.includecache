@@ -27,6 +27,8 @@ string
 -
 map
 -
+set
+-
 socketHeader.h
 /Users/poeroz/Downloads/dnsrelay/lib/socketHeader.h
 
@@ -76,7 +78,7 @@ message.h
 iostream
 -
 
-/Users/poeroz/Downloads/dnsrelay/src/parser.cpp
+/Users/poeroz/Downloads/dnsrelay/src/main.cpp
 ../lib/parser.h
 /Users/poeroz/Downloads/dnsrelay/lib/parser.h
 

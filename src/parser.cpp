@@ -65,8 +65,9 @@ void parser::parseRequest() {
         auto query = msg.question.front();
         std::string name = message::transName(query.QNAME);
         uint32_t IP;
-        if (table->query(name, IP)) {
-            addAnswerSection(IP, query.QNAME);
+        time_t ddl;
+        if (table->query(name, IP, ddl)) {
+            addAnswerSection(IP, query.QNAME, ddl);
 
             DBG_MESSAGE("Successfully found in local table.");
             DBG_MESSAGE("DNS-relay sends the answer to the client.");
@@ -90,7 +91,7 @@ void parser::parseRequest() {
     }
 }
 
-void parser::addAnswerSection(uint32_t IP, std::string name) {
+void parser::addAnswerSection(uint32_t IP, std::string name, time_t ddl) {
     if (IP == (uint32_t)0) {
         msg.header.RCODE = 3;
     }
@@ -102,7 +103,7 @@ void parser::addAnswerSection(uint32_t IP, std::string name) {
         message::RESOURCE_RECORD tmpAnswer;
         tmpAnswer.NAME = name;
         tmpAnswer.TYPE = 1;
-        tmpAnswer.TTL = 3600;
+        tmpAnswer.TTL = ddl - std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
         tmpAnswer.CLASS = 1;
         tmpAnswer.RDLENGTH = 4;
         tmpAnswer.RDATA.assign((uint8_t *)&IP, (uint8_t *)(&IP + 1));
@@ -132,6 +133,15 @@ void parser::parseResponse() {
 
         DBG_MESSAGE("DNS-relay sends the answer to the client.");
         msg.debug();
+
+        for (auto ans : msg.RR[message::ANSWER]) {
+            if (ans.TYPE == 1 && ans.CLASS == 1) {
+                uint32_t IP = *(uint32_t *)ans.RDATA.data();
+                time_t ddl = recvTime + ans.TTL;
+                table->insertItem(message::transName(msg.question.front().QNAME), IP, ddl);
+                break;
+            }
+        }
 
         sockMan->sendBuffer(buffer, bufferSize, tmpRecord.senderAddr);
     }
