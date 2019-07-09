@@ -82,3 +82,27 @@ iostream
 ../lib/parser.h
 /Users/poeroz/Downloads/dnsrelay/lib/parser.h
 
+/Users/poeroz/Downloads/dnsrelay/src/message.cpp
+../lib/message.h
+/Users/poeroz/Downloads/dnsrelay/lib/message.h
+
+/Users/poeroz/Downloads/dnsrelay/src/nameTable.cpp
+../lib/nameTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/nameTable.h
+
+/Users/poeroz/Downloads/dnsrelay/src/parser.cpp
+../lib/parser.h
+/Users/poeroz/Downloads/dnsrelay/lib/parser.h
+
+/Users/poeroz/Downloads/dnsrelay/src/recordTable.cpp
+../lib/recordTable.h
+/Users/poeroz/Downloads/dnsrelay/lib/recordTable.h
+
+/Users/poeroz/Downloads/dnsrelay/src/socketManager.cpp
+cstring
+-
+chrono
+-
+../lib/socketManager.h
+/Users/poeroz/Downloads/dnsrelay/lib/socketManager.h
+
