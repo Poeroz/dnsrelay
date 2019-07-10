@@ -6,7 +6,6 @@
 
 nameTable::nameTable(){
     domainMap.clear();
-    ipSet.clear();
     ddlSet.clear();
     read_hostfile();
     read_cachefile();
@@ -29,7 +28,6 @@ void nameTable::read_hostfile() {
 
             domainMap.insert(std::make_pair(tmp.name, tmp));
             ddlSet.insert(tmp);
-            ipSet.insert(tmp);
         }
     }
 }
@@ -52,7 +50,6 @@ void nameTable::read_cachefile() {
 
             domainMap.insert(std::make_pair(tmp.name, tmp));
             ddlSet.insert(tmp);
-            ipSet.insert(tmp);
         }
     }
     clearTimeoutItem();
@@ -79,7 +76,6 @@ void nameTable::insertItem(std::string name, uint32_t IP, time_t ddl) {
 
     domainMap.insert(std::make_pair(name, tmp));
     ddlSet.insert(tmp);
-    ipSet.insert(tmp);
 
     write_file();
 }
@@ -88,12 +84,13 @@ void nameTable::clearTimeoutItem() {
     time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     for (auto iter = ddlSet.begin(); iter != ddlSet.end();) {
         if (iter->ddl <= now) {
-            domainMap.erase(domainMap.find(iter->name));
-            ipSet.erase(ipSet.find(*iter));
+            if (domainMap.find(iter->name) != domainMap.end()) {
+                domainMap.erase(domainMap.find(iter->name));
+            }
             iter = ddlSet.erase(iter);
         }
         else {
-            iter++;
+            break;
         }
     }
     write_file();
@@ -102,7 +99,7 @@ void nameTable::clearTimeoutItem() {
 void nameTable::write_file() {
     std::ofstream fout(CACHE_FILE);
     if (fout.is_open()) {
-        for (auto it : ipSet) {
+        for (auto it : ddlSet) {
             if (it.ddl == LONG_MAX) continue;
             uint32_t IP = it.IP;
             char str[INET_ADDRSTRLEN];

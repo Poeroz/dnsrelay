@@ -30,12 +30,6 @@ public:
         }
     };
 
-    struct ipcmp {
-        bool operator()(nameTable::nameItem lhs, nameTable::nameItem rhs) {
-            return lhs.IP < rhs.IP;
-        }
-    };
-
     nameTable();
     void read_hostfile();
     void read_cachefile();
@@ -43,9 +37,8 @@ public:
     void insertItem(std::string name, uint32_t IP, time_t ddl);
     bool query(std::string name, uint32_t &IP, time_t &ddl);
 private:
-    std::map<std::string, nameTable::nameItem> domainMap;
     std::multiset<nameTable::nameItem, nameTable::ddlcmp> ddlSet;
-    std::multiset<nameTable::nameItem, nameTable::ipcmp> ipSet;
+    std::map<std::string, nameTable::nameItem> domainMap;
     void write_file();
 };
 

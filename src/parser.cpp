@@ -93,6 +93,7 @@ void parser::parseRequest() {
 
 void parser::addAnswerSection(uint32_t IP, std::string name, time_t ddl) {
     if (IP == (uint32_t)0) {
+        msg.header.QR = true;
         msg.header.RCODE = 3;
     }
     else {
