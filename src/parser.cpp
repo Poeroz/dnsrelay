@@ -118,6 +118,11 @@ void parser::sendToServer() {
     auto IDptr = (uint16_t *)buffer;
     DBG_MESSAGE("ID transfer : " + std::to_string(ntohs(*IDptr)) + " -> " + std::to_string(newID));
     *IDptr = htons(newID);
+    msg.buffer2Struct(buffer);
+
+    DBG_MESSAGE("DNS-relay sends the query to the server.");
+    msg.debug();
+
     sockMan->sendBuffer(buffer, bufferSize, serverAddr);
 }
 
@@ -147,3 +152,4 @@ void parser::parseResponse() {
         sockMan->sendBuffer(buffer, bufferSize, tmpRecord.senderAddr);
     }
 }
+
