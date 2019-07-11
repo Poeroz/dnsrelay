@@ -24,7 +24,7 @@ void nameTable::read_hostfile() {
             nameItem tmp;
             tmp.name = name;
             tmp.IP = IP;
-            tmp.ddl = LONG_MAX;
+            tmp.ddl = INT_MAX;
 
             domainMap.insert(std::make_pair(tmp.name, tmp));
             ddlSet.insert(tmp);
@@ -100,7 +100,7 @@ void nameTable::write_file() {
     std::ofstream fout(CACHE_FILE);
     if (fout.is_open()) {
         for (auto it : ddlSet) {
-            if (it.ddl == LONG_MAX) continue;
+            if (it.ddl == INT_MAX) continue;
             uint32_t IP = it.IP;
             char str[INET_ADDRSTRLEN];
             inet_ntop(AF_INET, (void *)&IP, str, INET_ADDRSTRLEN);

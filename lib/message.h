@@ -90,7 +90,7 @@ public:
         std::string NAME;
         uint16_t TYPE;
         uint16_t CLASS;
-        uint32_t TTL;
+        int32_t TTL;
         uint16_t RDLENGTH;
         std::vector<uint8_t> RDATA;
     };
@@ -129,9 +129,9 @@ private:
     void RR2Buffer(uint8_t *&ptr, int &bufferSize, RRTYPE type);
 
     void getUint16(uint16_t &var, uint8_t *&ptr);
-    void getUint32(uint32_t &var, uint8_t *&ptr);
+    void getInt32(int32_t &var, uint8_t *&ptr);
 
     void putUint16(uint16_t var, uint8_t *&ptr, int &bufferSize);
-    void putUint32(uint32_t var, uint8_t *&ptr, int &bufferSize);};
+    void putInt32(int32_t var, uint8_t *&ptr, int &bufferSize);};
 
 #endif //DNSRELAY_MESSAGE_H

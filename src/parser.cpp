@@ -104,7 +104,12 @@ void parser::addAnswerSection(uint32_t IP, std::string name, time_t ddl) {
         message::RESOURCE_RECORD tmpAnswer;
         tmpAnswer.NAME = name;
         tmpAnswer.TYPE = 1;
-        tmpAnswer.TTL = ddl - std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        if (ddl == INT_MAX) {
+            tmpAnswer.TTL = INT_MAX;
+        }
+        else {
+            tmpAnswer.TTL = ddl - std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        }
         tmpAnswer.CLASS = 1;
         tmpAnswer.RDLENGTH = 4;
         tmpAnswer.RDATA.assign((uint8_t *)&IP, (uint8_t *)(&IP + 1));

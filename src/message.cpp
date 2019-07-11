@@ -64,7 +64,7 @@ void message::buffer2RR(uint8_t *&ptr, message::RRTYPE type) {
         tmpRR.NAME = name;
         getUint16(tmpRR.TYPE, ptr);
         getUint16(tmpRR.CLASS, ptr);
-        getUint32(tmpRR.TTL, ptr);
+        getInt32(tmpRR.TTL, ptr);
         getUint16(tmpRR.RDLENGTH, ptr);
         tmpRR.RDATA.assign(ptr, ptr + tmpRR.RDLENGTH);
         ptr += tmpRR.RDLENGTH;
@@ -92,9 +92,9 @@ void message::unpackName(uint8_t *&ptr, std::string &name) {
     ptr++;
 }
 
-void message::getUint32(uint32_t &var, uint8_t *&ptr) {
-    var = ntohl(*(uint32_t *)ptr);
-    ptr += sizeof(uint32_t);
+void message::getInt32(int32_t &var, uint8_t *&ptr) {
+    var = ntohl(*(int32_t *)ptr);
+    ptr += sizeof(int32_t);
 }
 
 void message::getUint16(uint16_t &var, uint8_t *&ptr) {
@@ -109,11 +109,11 @@ void message::putUint16(uint16_t var, uint8_t *&ptr, int &bufferSize) {
     ptr += sizeof(uint16_t);
 }
 
-void message::putUint32(uint32_t var, uint8_t *&ptr, int &bufferSize) {
-    auto intptr = (uint32_t *)ptr;
-    *intptr = (uint32_t)(htonl(var));
-    bufferSize += sizeof(uint32_t);
-    ptr += sizeof(uint32_t);
+void message::putInt32(int32_t var, uint8_t *&ptr, int &bufferSize) {
+    auto intptr = (int32_t *)ptr;
+    *intptr = (int32_t)(htonl(var));
+    bufferSize += sizeof(int32_t);
+    ptr += sizeof(int32_t);
 }
 
 std::string message::transName(std::string name) {
@@ -176,7 +176,7 @@ void message::RR2Buffer(uint8_t *&ptr, int &bufferSize, message::RRTYPE type) {
 
         putUint16(rr.TYPE, ptr, bufferSize);
         putUint16(rr.CLASS, ptr, bufferSize);
-        putUint32(rr.TTL, ptr, bufferSize);
+        putInt32(rr.TTL, ptr, bufferSize);
         putUint16(rr.RDLENGTH, ptr, bufferSize);
 
         memcpy((void *)ptr, (void *)rr.RDATA.data(), rr.RDATA.size());
